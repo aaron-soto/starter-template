@@ -25,8 +25,10 @@ const config = {
         md: "100%",
         lg: "800px",
         xl: "960px",
+        "2xl": "1080px",
       },
     },
+
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

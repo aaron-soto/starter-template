@@ -127,13 +127,16 @@ const FAQSection = () => {
           <AccordionItem key={faq.id} value={`item-${faq.id}`}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>
             <AccordionContent>
-              {faq.answer}
-              <div className="flex mt-4 gap-4 text-sm">
+              <p>{faq.answer}</p>
+              <p className="text-xs text-gray-500 mt-4 mb-2">
+                Was this helpful?
+              </p>
+              <div className="flex gap-4 text-md">
                 <Button
                   size="sm"
                   variant="ghost"
                   className={cn(
-                    'flex items-center gap-2 text-sm',
+                    'flex items-center gap-2 text-xs',
                     votes[faq.id]?.upvote &&
                       'text-green-400 hover:text-green-600 bg-green-50/80 hover:bg-green-50 dark:bg-green-900 dark:hover:text-green-400 dark:hover:bg-green-800',
                   )}
@@ -146,7 +149,7 @@ const FAQSection = () => {
                   size="sm"
                   variant="ghost"
                   className={cn(
-                    'flex items-center gap-2 text-sm',
+                    'flex items-center gap-2 text-xs',
                     votes[faq.id]?.downvote &&
                       'text-red-400 hover:text-red-600 bg-red-50/80 hover:bg-red-50 dark:bg-red-900 dark:hover:text-red-400 dark:hover:bg-red-800',
                   )}

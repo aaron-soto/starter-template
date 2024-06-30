@@ -3,9 +3,9 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from "@/components/ui/select";
-import { SelectValue } from "@radix-ui/react-select";
-import React from "react";
+} from '@/components/ui/select';
+import { SelectValue } from '@radix-ui/react-select';
+import React from 'react';
 
 const LanguageSwitcher = () => {
   return (

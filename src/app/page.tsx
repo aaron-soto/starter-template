@@ -2,7 +2,6 @@ import ContactSection from '@/components/sections/ContactSection';
 import FAQSection from '@/components/sections/FAQSection';
 import NewsletterSection from '@/components/sections/NewsletterSection';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 
 export default function Home() {
   return (

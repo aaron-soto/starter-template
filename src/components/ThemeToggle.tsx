@@ -36,9 +36,9 @@ const ThemeToggle = ({
       <TooltipTrigger
         onClick={cycleToNextTheme}
         className={buttonVariants({
-          variant: 'ghost',
+          variant: 'outline',
           size: size || 'default',
-          className: 'aspect-square p-0',
+          className: 'f-full p-0 aspect-square',
         })}
       >
         {theme === 'system' && <Laptop height={20} width={20} />}
@@ -46,7 +46,7 @@ const ThemeToggle = ({
         {theme === 'dark' && <Moon height={20} width={20} />}
       </TooltipTrigger>
       <TooltipContent>
-        <p>
+        <p className="text-xs">
           {theme === 'system' && 'System'}
           {theme === 'light' && 'Light'}
           {theme === 'dark' && 'Dark'}
