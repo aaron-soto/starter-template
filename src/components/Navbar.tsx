@@ -9,7 +9,7 @@ const Navbar = () => {
   const { data: session } = useSession() as { data: Session };
 
   return (
-    <div className="border-b sticky top-0 z-10 bg-white/30 dark:bg-black/30 backdrop-blur-md">
+    <div className="border-b sticky h-[60px] top-0 z-10 bg-white/30 dark:bg-black/30 backdrop-blur-md">
       <div className="container">
         <nav className="flex items-center justify-between py-2">
           <div>

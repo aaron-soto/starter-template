@@ -3,19 +3,23 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from "@/components/ui/select";
-import { SelectValue } from "@radix-ui/react-select";
-import React from "react";
+} from '@/components/ui/select';
+import { SelectValue } from '@radix-ui/react-select';
+import React from 'react';
 
 const LanguageSwitcher = () => {
   return (
-    <Select>
-      <SelectTrigger className="w-[80px]">
-        <SelectValue placeholder="en" />
+    <Select defaultValue="EN">
+      <SelectTrigger className="w-[80px] text-xs">
+        <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="en">En</SelectItem>
-        <SelectItem value="es">Es</SelectItem>
+        <SelectItem value="EN" className="text-xs">
+          <span className="mr-2">EN</span>
+        </SelectItem>
+        <SelectItem value="ES" className="text-xs">
+          ES
+        </SelectItem>
       </SelectContent>
     </Select>
   );
