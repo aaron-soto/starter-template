@@ -7,6 +7,9 @@ import { ThemeProvider } from '@/providers/ThemeProvider';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import SessionsProvider from '@/providers/SessionsProvider';
+import { getSession } from 'next-auth/react';
+import NextAuthProvider from '@/providers/SessionsProvider';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -23,6 +26,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = getSession(); // Fetch the session
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -31,16 +36,18 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TooltipProvider>
-            <main className="relative flex flex-col min-h-screen">
-              <Navbar />
-              <div className="flex-grow flex-1">{children}</div>
-              <Footer />
-            </main>
-            <Toaster />
-          </TooltipProvider>
-        </ThemeProvider>
+        <NextAuthProvider session={session}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <TooltipProvider>
+              <main className="relative flex flex-col min-h-screen">
+                <Navbar />
+                <div className="flex-grow flex-1">{children}</div>
+                <Footer />
+              </main>
+              <Toaster />
+            </TooltipProvider>
+          </ThemeProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

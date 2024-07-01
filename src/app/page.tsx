@@ -1,12 +1,13 @@
+import UserInfo from '@/components/UserInfo';
 import ContactSection from '@/components/sections/ContactSection';
 import FAQSection from '@/components/sections/FAQSection';
 import NewsletterSection from '@/components/sections/NewsletterSection';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
+      <UserInfo />
       <div className="container py-16">
         <h1 className="font-bold text-5xl mb-4">Welcome to the App</h1>
         <p className="mb-4">
